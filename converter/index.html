@@ -3,10 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic calculation app</title>
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-nav .nav-item {
+            margin-right: 50px;
+            font-size: 20px;
+        }
+        
+    </style>
+    <title>my calculator</title>
 </head>
 <body>
-    <h1>hello mate</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div><a onclick="showSection('main')">CALCULATOR</a></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('area')">AREA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('volume')">VOLUME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showSection('distance')">DISTANCE</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="main">
+    <h2>Welcome to the Simple Calculator</h2>
+    <table>
+        <tr>
+            <td colspan="2" width="50%">NO 1</td>
+            <td colspan="2" width="50%"><input id="num1" type="number"></td>
+        </tr>
+        <tr>
+            <td colspan="2" width="50%">NO 2</td>
+            <td colspan="2" width="50%"><input id="num2" type="number"></td>
+        </tr>
+        <tr>
+            <td class="operation" width="25%" onclick="add()">+</td>
+            <td class="operation" width="25%" onclick="sub()">-</td>
+            <td class="operation" width="25%" onclick="mul()">*</td>
+            <td class="operation" width="25%" onclick="div()">/</td>
+        </tr>
+        <tr>
+            <td id="ans" colspan="4"></td>
+        </tr>
+    </table>
+</div>
+
+<div id="area">
+    <div class="components">
+        <h2>Area Calculator(Select the shape)</h2>
+        <div id="list">
+            <div onclick="showshape('circle')">Circle</div>
+            <div onclick="showshape('triangle')">Triangle</div>
+            <div onclick="showshape('square')">Square</div>
+            <div onclick="showshape('rectangle')">Rectangle</div>
+        </div>
+        <div id="calculated_area">
+            <div id="h1">Please Select The Shape Whose Area You Want To Find</div>
+            <div id="circle">
+                <h1>Enter the Value Of Radius</h1>
+                <table>
+                    <tr>
+                        <td>Radius</td>
+                        <td><input type="number" id="radius"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="calculate_circle" onclick="calculate_circle()"><input type="submit" value="Calculate"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="circle_area"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="triangle">
+
+                <h1>Enter the Value Of Height & Base</h1>
+                <table>
+                    <tr>
+                        <td>Height</td>
+                        <td><input type="number" id="height"></td>
+                    </tr>
+                    <tr>
+                        <td>Base</td>
+                        <td><input type="number" id="base"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="calculate_triangle" onclick="calculate_triangle()"><input type="submit" value="Calculate"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="triangle_area"></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="square">
+
+                <h1>Enter the Value Of Side</h1>
+                <table>
+                    <tr>
+                        <td>Side</td>
+                        <td><input type="number" id="side"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="calculate_square" onclick="calculate_square()"><input type="submit" value="Calculate"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="square_area"></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="rectangle">
+
+                <h1>Enter the Value Of Length & Breadth</h1>
+                <table>
+                    <tr>
+                        <td>Length</td>
+                        <td><input type="number" id="length"></td>
+                    </tr>
+                    <tr>
+                        <td>Breadth</td>
+                        <td><input type="number" id="breadth"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="calculate_rectangle" onclick="calculate_rectangle()"><input type="submit" value="Calculate"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="rectangle_area"></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div id="volume">
+    <div id="parent">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+</div>
+
+<div id="distance">
+    <h2>Distance Calculator</h2>
+    <p>Content for distance calculations goes here.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
